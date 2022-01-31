@@ -3,16 +3,17 @@ import sys
 class Tester:
     def __init__(self, num):
         self.num = num
-        input_file = "s" + num + ".txt"
-        test_file = "t" + num + ".txt"
-        self.input_data = []
+        input_file = "s" + num + ".txt" # データセット作成に使用するファイル
+        test_file = "t" + num + ".txt"  # テストに使用するファイル
+        
+        self.input_data = []            # データセット作成のファイルを読み込む
         with open(input_file, 'r', encoding='utf-8') as f_in:
             lines = f_in.read()
             for line in lines.split('\n'):
                 if(len(line) != 0):
                     self.input_data.append(line)
         
-        self.test_data = dict()
+        self.test_data = dict()         # テストに使用するファイルを読み込む
         with open(test_file, encoding='utf-8') as f_test:
             lines = f_test.readlines()
             for line in lines:
@@ -31,12 +32,12 @@ class Tester:
         else:
             print("failed...")
 
-    #辞書の作成
+    # 辞書の作成
     def make_dic(self):
-        #self.input_dataに辞書作成用のデータ
-        #print(self.input_data)
-        #self.test_dataにテスト用のデータ
-        #print(self.test_data)
+        # self.input_dataに辞書作成用のデータ
+        # print(self.input_data)
+        # self.test_dataにテスト用のデータ
+        # print(self.test_data)
         pass
     
     # keyが辞書に含まれているのかを確かめる用の関数
